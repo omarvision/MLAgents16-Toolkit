@@ -1,23 +1,55 @@
---------------------------
- Setup MLAgents for Unity
---------------------------
 
-1. Download MLAgents from github
+====================================================
+How to setup to use MLAgents16 as of Oct 2022
+====================================================
 
-2. Install Anaconda 
+-- Visual Studio -----------------------------------
+Install Visual Studio 2022 personal edition	(with support for Unity tools)
+  
+	Install Unity Tools for Visual Studio:
+	- run visual studio installer
+	- from your installed version > Modify 
+	- check 'Game development with Unity'
+	- install
+	
+	
+	
+-- Unity 2021 --------------------------------------
+* Install Unity Hub (latest version)
+* From Unity Hub, Install Unity 2021 (latest version)
 
-3. Anaconda Navigator - create mlagent environment
-
-4. Anaconda Terminal
-	- (cd) change directory to mlagents folder
-	- pip install -e ml-agents [enter]
-	- pip install -e ml-agents-envs [enter]
-	- pip install torch [enter]
-	- test:
-	  mlagents-learn [enter]
-	  result: should see unity ascii logo
+	Ensure Unity calls Visual Studio for C# scripts:
+	- run unity editor
+	- Edit > Preferences > External Tools 
+		External Script Editor = Microsoft Visual Studio 2022
+		- Embedded Packages = yes
+		- Local Packages = yes
+		- press button "Regenerate project files"
+			  
 	  
-	  NOTE: this works up to mlagents16 (at least)
-	  
-5. Python MLAgent is now setup
-	You can create a unity project that uses mlagent
+	
+-- Anaconda ----------------------------------------
+* Download/Install Anaconda (latest version has python 3.9)
+
+* Create MLAgents Environment
+  Start Anaconda Prompt (base environment is default)
+	(base) C:\...   
+	(base) conda 		<--- to list all conda commands
+	(base) conda create -n mlagents16 python=3.9
+           The following NEW packages will be installed:
+           Proceed ([y]/n)?  y  
+	(base) conda activate mlagents19 
+	(mlagents19) C:\...
+	
+	
+	
+-- MLAgent16 ----------------------------------------
+* Download MLAgents from github
+	(mlagents16) pip install -e ml-agents
+	(mlagents16) pip install -e ml-agents-envs
+	(mlagents16) pip install torch
+* test:
+	(mlagents16) mlagents-learn --help   	<--- this will show help
+	(mlagents16) mlagents-learn 	
+	result: should see unity ascii logo
+	  	  
