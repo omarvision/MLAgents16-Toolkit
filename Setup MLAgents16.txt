@@ -1,0 +1,23 @@
+--------------------------
+ Setup MLAgents for Unity
+--------------------------
+
+1. Download MLAgents from github
+
+2. Install Anaconda 
+
+3. Anaconda Navigator - create mlagent environment
+
+4. Anaconda Terminal
+	- (cd) change directory to mlagents folder
+	- pip install -e ml-agents [enter]
+	- pip install -e ml-agents-envs [enter]
+	- pip install torch [enter]
+	- test:
+	  mlagents-learn [enter]
+	  result: should see unity ascii logo
+	  
+	  NOTE: this works up to mlagents16 (at least)
+	  
+5. Python MLAgent is now setup
+	You can create a unity project that uses mlagent
