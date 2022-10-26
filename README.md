@@ -1,13 +1,11 @@
-# MLAgents16-Toolkit
-version 16 of the MLAgents toolkit. Useable yo make Artificial Intelligence / Neural Network training and brains for Unity game objects
-
 
 ====================================================
 How to setup to use MLAgents as of Oct 2022
 ====================================================
 
 -- Visual Studio Install ----------------------------------
-Install Visual Studio 2022 personal edition	(with support for Unity tools)  
+Install Visual Studio 2022 personal edition	(with support for Unity tools)
+  
 	Install Unity Tools for Visual Studio:
 	- run visual studio installer
 	- from your installed version > Modify 
@@ -15,40 +13,55 @@ Install Visual Studio 2022 personal edition	(with support for Unity tools)
 	- install
 	
 	
+	
 -- Unity 2021 Install -------------------------------------
 * Install Unity Hub (latest version)
 * From Unity Hub, Install Unity 2021 (latest version)
+
 	Ensure Unity calls Visual Studio for C# scripts:
 	- run unity editor
 	- Edit > Preferences > External Tools 
 		External Script Editor = Microsoft Visual Studio 2022
 		- Embedded Packages = yes
 		- Local Packages = yes
-		- press button "Regenerate project files"			  
+		- press button "Regenerate project files"
+			  
 	  
 	
 -- Anaconda Install ---------------------------------------
 * Download/Install Anaconda (latest version has python 3.9)
+
 * Create MLAgents Environment
   Start Anaconda Prompt (base environment is default)
 	(base) C:\...   
-	(base) conda 			<--- to list all conda commands
-	(base) conda create -n mlagents python=3.9
+	(base) conda 									<--- to list all conda commands
+	(base) conda create -n mlagents python=3.9.9	<--- above this version has bugs
            The following NEW packages will be installed:
            Proceed ([y]/n)?  y  
+	(base) conda info --envs						<--- lists environments
 	(base) conda activate mlagents
-	(mlagents) C:\...	
+	(mlagents) C:\...
+	
+* Create MLAgents Environment (using Anaconda Navigator)
+  Start Anaconda Navigator > Environments > Create 
+	Name: mlagents			<--- you can choose your own name
+	Packages: Python
+	Version: 3.8.13			<--- must be version 3.9.9 or earlier due to bug
+	
 	
 	
 -- MLAgent Toolkit Install --------------------------------
 Type these commands in the Anaconda Prompt / MLAgents environment window / press enter
 * Install mlagents fro PyPi	
-	pip3 install mlagents==0.16.1	<--- will install the mlagents toolkit to your local computer
-
+	pip3 install mlagents==0.28.0	<--- will install the mlagents toolkit to your local computer
+	pip3 install torch				<--- compatible version of pytorch
 * test:
-	mlagents-learn --help 		<--- shows help. proof install of toolkit successful
-	mlagents-learn 			<--- starts the toolkit running. shows unity ascii logo on success
+	mlagents-learn --help   		<--- shows help. proof install of toolkit successful
+	mlagents-learn 					<--- starts the toolkit running. shows unity ascii logo on success
+	*when mlagents-learn runs 1st time 'Allow-access' on the windows security alert
 
-	
 
-	  	  
+
+-- Tensorflow Install (optional) --------------------------
+$ pip install --user tf-agents
+
