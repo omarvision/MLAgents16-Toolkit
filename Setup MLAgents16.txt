@@ -34,24 +34,34 @@ Install Visual Studio 2022 personal edition	(with support for Unity tools)
 * Create MLAgents Environment
   Start Anaconda Prompt (base environment is default)
 	(base) C:\...   
-	(base) conda 			<--- to list all conda commands
-	(base) conda create -n mlagents python=3.9
+	(base) conda 									<--- to list all conda commands
+	(base) conda create -n mlagents python=3.9.9	<--- above this version has bugs
            The following NEW packages will be installed:
            Proceed ([y]/n)?  y  
+	(base) conda info --envs						<--- lists environments
 	(base) conda activate mlagents
 	(mlagents) C:\...
+	
+* Create MLAgents Environment (using Anaconda Navigator)
+  Start Anaconda Navigator > Environments > Create 
+	Name: mlagents			<--- you can choose your own name
+	Packages: Python
+	Version: 3.8.13			<--- must be version 3.9.9 or earlier due to bug
 	
 	
 	
 -- MLAgent Toolkit Install --------------------------------
 Type these commands in the Anaconda Prompt / MLAgents environment window / press enter
 * Install mlagents fro PyPi	
-	pip3 install mlagents==0.16.1	<--- will install the mlagents toolkit to your local computer
-
+	pip3 install mlagents==0.28.0	<--- will install the mlagents toolkit to your local computer
+	pip3 install torch				<--- compatible version of pytorch
 * test:
-	mlagents-learn --help   	<--- shows help. proof install of toolkit successful
-	mlagents-learn 			<--- starts the toolkit running. shows unity ascii logo on success
+	mlagents-learn --help   		<--- shows help. proof install of toolkit successful
+	mlagents-learn 					<--- starts the toolkit running. shows unity ascii logo on success
+	*when mlagents-learn runs 1st time 'Allow-access' on the windows security alert
 
-	
 
-	  	  
+
+-- Tensorflow Install (optional) --------------------------
+$ pip install --user tf-agents
+
